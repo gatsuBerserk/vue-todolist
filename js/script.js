@@ -11,7 +11,11 @@ const app= new Vue(
             // condizione se la stringa è diversa da vuata -->
             if (string.trim() != ""){ 
                 // --> aggiungi l'Item al nostro array-->
-                this.list.push(string.trim()); 
+                this.list.push({
+                    text : this.cartText.trim().toUpperCase(), 
+                    // questo item lo useremo come parametro per sbarrare il testo nella lista
+                    done : false 
+                }); 
                 // --> e svuota il campo di testo
                 this.cartText= ""; 
             // altrimenti dammi un errore 
@@ -21,13 +25,20 @@ const app= new Vue(
         },
         // Funzione per rimuovere l'Item dalla nostra lista 
         remuve : function(index){
-            // se lìitem è presente nella lista
+            // se l'item è presente nella lista
             if( this.list[index] != undefined ){ 
-                // elimina Item
+                // elimina solo l'item scelto
                 this.list.splice(index, 1);
             }else{ 
                 alert("Articolo non presente")
             }
+        }, 
+        // con questa funzione diamo all'item done il valore inverso e lo appliceremo sull'elemento della lista. 
+        crossed : function(index) { 
+            // done diventa true
+            this.list[index].done = !this.list[index].done;
         }
+
+        
     }
-})
+}) 

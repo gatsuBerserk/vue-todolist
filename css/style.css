@@ -1,7 +1,6 @@
 
 body{
-    background-image: url("https://images.wallpapersden.com/image/download/cool-4k-pattern_bGduZWyUmZqaraWkpJRobWllrWdma2U.jpg");
-    background-position: top;
+    background-image: url("../img/wallpapersden.com_cool-4k-pattern_3840x2160.jpg");
     background-repeat: no-repeat;
     height: 100%;
 }
@@ -15,5 +14,8 @@ main div.article{
 main .container div.article ul li{
     list-style: none; 
     border-bottom: 1px solid whitesmoke ;
-}
+} 
+main div.article ul li i{
+    cursor: pointer;
+} 
 

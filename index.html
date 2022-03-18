@@ -15,20 +15,21 @@
     <title>Todo List Carmine Passante classe 55</title>
 </head>
 <body> 
-    <main id="app">
-        <div class="container">
+    <main id="app"> 
+        <div class="container"> 
             <div class="row">
                 <div class="col-12 text-center justify-content-center align-item-center mt-5"> 
                     <div class="input-group mb-3">
-                        <input type="text" v-model="cartText" class="form-control" placeholder="Remenber">
+                        <input type="text" v-model="cartText" @keyup.enter="add(cartText)" class="form-control" placeholder="Remember to take...">
                         <button class="btn btn-warning ms-2" @click= "add(cartText)" >Add <i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div> 
                 <div class="col-12">
                     <div class="article p-5">
                         <ul v-if="list.length >=1">
-                            <li v-for="(element, index) in list" class="d-flex justify-content-between p-2">
-                                {{ element }} 
+                            <li v-for="(element, index) in list"  class="d-flex justify-content-between p-2 fs-2"> 
+                                <!-- Invertiamo il valore di done in JS con la funzione crossed data ad un evento click. Aggiungiamo la classe con un operatore ternario ( se done è uguale a true aggiungi la classe) -->
+                                <span @click="crossed(index)"  :class="(element.done == true) ? 'text-decoration-line-through' : ''"> {{ element.text }} </span> 
                                 <i class="fas fa-times-circle" @click="remuve(index)"></i>
                             </li>                       
                         </ul> 
