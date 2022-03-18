@@ -1,0 +1,19 @@
+
+body{
+    background-image: url("https://images.wallpapersden.com/image/download/cool-4k-pattern_bGduZWyUmZqaraWkpJRobWllrWdma2U.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+main div.article{
+    background-color: tomato; 
+    opacity: 0.7;
+    border-radius: 20px;
+} 
+
+main .container div.article ul li{
+    list-style: none; 
+    border-bottom: 1px solid whitesmoke ;
+}
+
